@@ -185,6 +185,20 @@ and open the template in the editor.
                 arc(x,y,radius,0,2*Math.PI,true);
                 closePath();
                 fill();
+                onmousedown = function(){
+                  if(y > radius){
+                        y-= 6;
+                        dy = -3;
+                        dx = 0;
+                    }  
+                };
+                onmouseup = function(){
+                     if(y < height - radius){
+                        y+=6;
+                        dy = 4;
+                        dx =0;
+                    }
+                };
                 onkeydown = function(){ //raises the ball up
                     if(y > radius){
                         y-= 6;
